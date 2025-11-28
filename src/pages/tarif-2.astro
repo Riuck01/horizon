@@ -1,0 +1,48 @@
+﻿---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PricingThreeCards from "@components/Pricing/PricingThreeCards.astro";
+import TestimonialsReverted from "@components/Testimonials/TestimonialsReverted.astro";
+import siteData from "@config/siteData.json";
+---
+
+<BaseLayout title="FORFAIT MARIAGE – 1 800 €" description={siteData.description}>
+  <section id="materiel" class="py-20">
+    <div class="container mx-auto text-center">
+      <h1 class="text-5xl font-bold mb-6">FORFAIT MARIAGE + Cérémonie laïque – 1 800 €</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Pour votre mariage, profitez d’une animation complète et personnalisée avec une cérémonie laïque.
+      </p>
+    </div>
+  </section>
+
+
+    
+  <!-- Première section de témoignages -->
+    <section class="py-20 bg-base-50">
+    <div class="container mx-auto">
+      <TestimonialsReverted start={11} count={2} />
+    </div>
+  </section>
+
+  
+    <!-- Deuxième section de témoignages -->
+    <section class="py-20">
+    <div class="container mx-auto">
+      <TestimonialsReverted start={13} count={2} />
+    </div>
+  </section>
+        
+        <section class="py-20 bg-base-50">
+      <div class="container mx-auto text-center">
+      <h1 class="text-5xl font-bold mb-6">Cérémonie laïque</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Plus de précisons pour votre Cérémonie Läique.
+      </p>
+    </div>
+
+    <div class="container mx-auto">
+      <TestimonialsReverted start={15} count={2} />
+    </div>
+  </section>
+
+</BaseLayout>

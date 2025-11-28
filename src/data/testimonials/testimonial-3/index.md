@@ -1,6 +1,6 @@
----
-title: BRIAN & KEVIN
-testimonial: Jenna was always available to answer our questions, offer recommendations, and ensure that everything ran smoothly. Her dedication to capturing our love story was evident in every shot, and we are grateful for her beautiful work.
+﻿---
+title: L’ambiance avant tout
+testimonial: Le repas est un moment d’échange entre les invités, où l’animateur doit rester en retrait. Une fois les assiettes terminées, il reprend la main. Le choix des musiques et la gestion du rythme de la soirée sont essentiels pour installer une vraie ambiance de fête.
 image: ./couple-7-crop.jpg
 order: 1
 ---

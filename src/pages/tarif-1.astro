@@ -1,0 +1,35 @@
+﻿---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PricingThreeCards from "@components/Pricing/PricingThreeCards.astro";
+import Testimonials from "@components/Testimonials/Testimonials.astro";
+import siteData from "@config/siteData.json";
+---
+
+<BaseLayout title="FORFAIT MARIAGE – 1 500 €" description={siteData.description}>
+  <section id="materiel" class="py-20">
+    <div class="container mx-auto text-center">
+      <h1 class="text-5xl font-bold mb-6">FORFAIT MARIAGE – 1 500 €</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Pour votre mariage, profitez d’une animation complète et personnalisée.
+      </p>
+    </div>
+  </section>
+
+
+    
+  <!-- Première section de témoignages -->
+    <section class="py-20 bg-base-50">
+    <div class="container mx-auto">
+      <Testimonials start={11} count={2} />
+    </div>
+  </section>
+
+  
+    <!-- Deuxième section de témoignages -->
+    <section class="py-20">
+    <div class="container mx-auto">
+      <Testimonials start={13} count={2} />
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,52 @@
+﻿---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import TestimonialsReverted from "@components/Testimonials/TestimonialsReverted.astro";
+import siteData from "@config/siteData.json";
+
+  // toutes les images dans public/images
+const images = Object.keys(
+  import.meta.glob("../../public/images/*.{jpg,jpeg,png,webp}", { eager: true })
+);
+---
+
+<BaseLayout title="Décoration" description={siteData.description}>
+   <!-- Première section de témoignages -->
+    <section class="py-20 bg-base-50">
+      <div class="container mx-auto">
+
+        <!-- Affiche les témoignages 4 à 6 -->
+        <TestimonialsReverted start={3} count={3} />
+
+      </div>
+    </section>
+
+  <!-- Section vidéos -->
+  <section class="site-container py-20">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="overflow-hidden rounded-lg shadow-md">
+        <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls class="w-full h-full object-cover rounded-lg" />
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-md">
+        <video src="https://www.w3schools.com/html/movie.mp4" controls class="w-full h-full object-cover rounded-lg" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section images -->
+  <section class="site-container pt-24 md:pt-36">
+    <div class="mx-auto max-w-6xl text-center mb-12">
+      <h1 class="text-5xl font-bold">Galerie images</h1>
+      <p class="text-lg text-gray-600 mt-4">Toutes les images en un seul endroit.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {images.map((src) => (
+        <div class="overflow-hidden rounded-lg">
+          <img src={src} alt="Image" class="w-full h-full object-cover" />
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+

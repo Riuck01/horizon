@@ -1,0 +1,18 @@
+﻿---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PricingThreeCards from "@components/Pricing/PricingThreeCards.astro";
+import siteData from "@config/siteData.json";
+---
+
+<BaseLayout title="Tarifs" description={siteData.description}>
+  <section id="tarifs" class="py-20 text-center">
+    <div class="container mx-auto">
+      <h1 class="text-5xl font-bold mb-6">Tarifs</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Découvrez mes formules adaptées à vos besoins. Que vous soyez particulier ou professionnel, nous avons une offre qui vous correspond.
+      </p>
+    </div>
+  </section>
+
+  <PricingThreeCards />
+</BaseLayout>

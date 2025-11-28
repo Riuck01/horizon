@@ -1,0 +1,19 @@
+﻿---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import About from "@components/About/About.astro";
+import siteData from "@config/siteData.json";
+---
+
+
+<BaseLayout title="Votre animateur" description={siteData.description}>
+  <section id="about" class="py-20">
+    <div class="container mx-auto text-center">
+      <h1 class="text-5xl font-bold mb-6">Votre animateur</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Découvrez qui je suis, mon parcours, et la passion qui anime mon travail.
+      </p>
+    </div>
+  </section>
+
+  <About />
+</BaseLayout>

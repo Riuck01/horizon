@@ -1,0 +1,42 @@
+﻿---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PortfolioThreeCards from "@components/Portfolio/PortfolioThreeCards.astro";
+import Testimonials from "@components/Testimonials/Testimonials.astro";
+import TestimonialsReverted from "@components/Testimonials/TestimonialsReverted.astro";
+import siteData from "@config/siteData.json";
+---
+
+<BaseLayout title="Vivez l’expérience" description={siteData.description}>
+  <section id="experience" class="py-20">
+    <div class="container mx-auto text-center">
+      <h1 class="text-5xl font-bold mb-6">Vivez l’expérience</h1>
+          <div class="container mx-auto mt-10 text-center">
+              <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Créer une soirée fluide, rythmée et adaptée à chaque invité : c’est tout l’art d’une animation réussie.
+              </p>
+          </div>
+    </div>
+  </section>
+
+    <!-- Section Témoignages -->
+    <section>
+    <div class="container mx-auto">
+        <Testimonials />
+    </div>
+    </section>
+
+  </section>
+    <!-- Section vidéos -->
+  <section class="site-container py-20">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="overflow-hidden rounded-lg shadow-md">
+        <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls class="w-full h-full object-cover rounded-lg" />
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-md">
+        <video src="https://www.w3schools.com/html/movie.mp4" controls class="w-full h-full object-cover rounded-lg" />
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

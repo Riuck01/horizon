@@ -1,0 +1,57 @@
+﻿---
+/**
+ * * Gallery Section — affiche plusieurs photos et vidéos avec un style harmonieux
+ */
+
+import { Image } from "astro:assets";
+
+interface MediaItem {
+	type: "image" | "video";
+	src: string;
+	alt?: string;
+}
+
+const mediaItems: MediaItem[] = [
+	{ type: "image", src: "/images/gallery/photo1.jpg", alt: "Photo 1" },
+	{ type: "video", src: "/videos/video1.mp4" },
+	{ type: "image", src: "/images/gallery/photo2.jpg", alt: "Photo 2" },
+	{ type: "image", src: "/images/gallery/photo3.jpg", alt: "Photo 3" },
+	{ type: "video", src: "/videos/video2.mp4" },
+	{ type: "image", src: "/images/gallery/photo4.jpg", alt: "Photo 4" },
+];
+---
+
+<section id="gallery" class="site-container scroll-mt-10 py-12 md:py-20">
+
+  <!-- Texte centré avant la galerie -->
+  <div class="mx-auto max-w-3xl text-center mb-12">
+    <h2 class="text-4xl font-bold mb-4">Découvrez nos moments capturés</h2>
+    <p class="text-lg text-gray-600">
+La déco lumière est un point essentiel du lieu de réception. Elle apporte une dimension moderne et féérique à chaque espace. Grâce à des macros, il est possible de changer rapidement les couleurs, les formes et les effets stroboscopiques. De plus, la lumière réagit en temps réel au rythme de la musique, synchronisée avec le BPM pour créer une ambiance immersive et dynamique tout au long de la soirée. Toute la gestion de ces projecteurs professionnels se fait par informatique, offrant un contrôle précis et une grande créativité.
+    </p>
+  </div>
+
+	<div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+		{mediaItems.map((item) => (
+			item.type === "image" ? (
+				<div class="overflow-hidden rounded-2xl shadow-md hover:scale-[1.02] transition-transform duration-300">
+					<img src={item.src} alt={item.alt || ""} class="w-full h-full object-cover" loading="lazy" />
+				</div>
+			) : (
+				<div class="overflow-hidden rounded-2xl shadow-md hover:scale-[1.02] transition-transform duration-300">
+					<video
+						src={item.src}
+						controls
+						class="w-full h-full object-cover"
+					/>
+				</div>
+			)
+		))}
+	</div>
+</section>
+
+<style>
+	video::-webkit-media-controls {
+		display: flex;
+	}
+</style>

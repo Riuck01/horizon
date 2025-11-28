@@ -1,0 +1,9 @@
+﻿---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import siteData from "@config/siteData.json";
+import Contact from "@components/Contact/Contact.astro";
+---
+
+<BaseLayout title="Contact" description={siteData.description}>
+  <Contact />
+</BaseLayout>

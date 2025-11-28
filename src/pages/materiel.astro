@@ -1,0 +1,31 @@
+﻿---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import TestimonialsReverted from "@components/Testimonials/TestimonialsReverted.astro";
+import Testimonials from "@components/Testimonials/Testimonials.astro";
+import siteData from "@config/siteData.json";
+---
+
+<BaseLayout title="Matériel" description={siteData.description}>
+  <section id="materiel" class="py-20">
+    <div class="container mx-auto text-center">
+      <h1 class="text-5xl font-bold mb-6">Matériel</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Besoin d’infos sur le matériel, les marques et les photos ? 
+      </p>
+    </div>
+  </section>
+
+  <!-- Première section de témoignages -->
+  <section class="py-20 bg-base-50">
+    <div class="container mx-auto">
+      <TestimonialsReverted start={6} count={3} />
+    </div>
+  </section>
+
+  <!-- Deuxième section de témoignages -->
+  <section class="py-20">
+    <div class="container mx-auto">
+      <Testimonials start={9} count={3} />
+    </div>
+  </section>
+</BaseLayout>

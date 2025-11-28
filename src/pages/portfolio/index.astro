@@ -1,29 +1,25 @@
----
-// components
-import Contact from "@components/Contact/Contact.astro";
-import PortfolioGrid from "@components/Portfolio/PortfolioGrid.astro";
-import TestimonialQuote from "@components/Testimonials/TestimonialQuote.astro";
-// layout
+﻿---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { getCollection, render } from "astro:content";
 
-const portfolios = await getCollection("portfolios", ({ data }) => {
-	// filter out draft pages
-	return data.draft !== true;
-});
+// toutes les images dans public/images
+const images = Object.keys(
+  import.meta.glob("../../../public/images/*.{jpg,jpeg,png,webp}", { eager: true })
+);
 ---
 
-<BaseLayout title="Portfolios" description="Portfolio page for my projects and work.">
-	<div class="site-container pt-24 md:pt-36">
-		<div class="mx-auto max-w-6xl text-center">
-			<h1 class="h2 text-pretty uppercase">
-				The moments you'll want to relive in a timeless, romantic, and artistic style.
-			</h1>
-		</div>
-		<PortfolioGrid portfolios={portfolios} />
-	</div>
+<BaseLayout title="Galerie images" description="Toutes les images de mon dossier">
+  <section class="site-container pt-24 md:pt-36">
+    <div class="mx-auto max-w-6xl text-center mb-12">
+      <h1 class="text-5xl font-bold">Galerie images</h1>
+      <p class="text-lg text-gray-600 mt-4">Vous trouverez ici des photos de mon matériel et de la décoration etc</p>
+    </div>
 
-	<TestimonialQuote />
-
-	<Contact class="mt-12" />
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {images.map((src) => (
+        <div class="overflow-hidden rounded-lg">
+          <img src={src} alt="Image" class="w-full h-full object-cover" />
+        </div>
+      ))}
+    </div>
+  </section>
 </BaseLayout>

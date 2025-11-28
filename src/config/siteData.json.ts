@@ -6,7 +6,6 @@ export interface SiteDataProps {
 	author: {
 		name: string;
 		email: string;
-		twitter: string; // used for twitter cards when sharing a blog post on twitter
 	};
 	defaultImage: {
 		src: string;
@@ -16,17 +15,16 @@ export interface SiteDataProps {
 
 // Update this file with your site specific information
 const siteData: SiteDataProps = {
-	name: "Horizon Photography",
+	name: "Forest Events",
 	// Your website's title and description (meta fields)
-	title: "Horizon - a beautiful photography website template made with Astro and Tailwind CSS",
+	title: "Forest Events",
 	description:
-		"Get your next website up and running quickly with our beautiful website theme designed using Astro and Tailwind CSS. Perfect for freelancers, developers, startups, and personal use.",
+		"Forest Events vous accompagne pour vos événements avec DJ, sonorisation, lumière et animations sur-mesure. Ambiance maîtrisée, musique adaptée et prestations professionnelles pour mariages, cérémonies et soirées privées.",
 	useViewTransitions: true,
 	// Your information!
 	author: {
-		name: "Cosmic Themes",
-		email: "creator@cosmicthemes.com",
-		twitter: "Cosmic_Themes",
+		name: "Tom Forest",
+		email: "tom.forest@outlook.fr"
 	},
 
 	// default image for meta tags if the page doesn't have an image already

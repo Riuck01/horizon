@@ -1,4 +1,4 @@
----
+﻿---
 title: Privacy Policy
 description: Example privacy policy for Blogsmith! The best starter blog template for Astro.
 ---

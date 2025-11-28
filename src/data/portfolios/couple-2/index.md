@@ -1,6 +1,6 @@
----
-title: A beachside celebration
-description: The sandy shores, kissed by gentle waves, provided a serene backdrop for your beach wedding.
+﻿---
+title: Vivez l’expérience
+description: Le choix du DJ est essentiel pour la réussite d’un évènement. Au-delà de la technique aux platines, il coordonne le déroulé, gère les temps forts et les moments plus calmes, s’adapte à l’ambiance et reste attentif aux invités pour maintenir une dynamique fluide et agréable.
 heroImage: ./couple-3-square.jpg
 date: "Jun 12 2024"
 location: Miami, Florida

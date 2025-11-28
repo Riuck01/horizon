@@ -15,8 +15,7 @@
 /* https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer */
 @layer base {
 	:root {
-		/* default font */
-		font-family: var(--font-sans);
+		--font-sans: 'Raleway', 'Work Sans', Arial, sans-serif;
 	}
 
 	/* starwind preflight merged with Cosmic Themes */

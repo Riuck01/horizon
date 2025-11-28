@@ -1,0 +1,55 @@
+﻿---
+/**
+ * * Testimonials Section — section générique pour afficher des témoignages
+ */
+
+import TestimonialCard from "@components/TestimonialCard/TestimonialCard.astro";
+import { getCollection } from "astro:content";
+
+interface Props {
+  start?: number; // index de départ
+  count?: number; // nombre de témoignages à afficher
+  filter?: (t: any) => boolean; // fonction optionnelle pour filtrer
+  testimonials?: any[]; // tableau de témoignages personnalisé
+}
+
+const { start = 0, count = 3, filter, testimonials: customTestimonials } = Astro.props as Props;
+
+// Récupère la collection si aucun tableau personnalisé fourni
+const allTestimonials = customTestimonials || await getCollection("testimonials");
+
+let sortedTestimonials = allTestimonials.sort((a, b) => a.data.order - b.data.order);
+
+// applique le filtre si fourni
+if (filter) {
+  sortedTestimonials = sortedTestimonials.filter(filter);
+}
+
+// sélectionne la tranche
+const displayedTestimonials = sortedTestimonials.slice(start, start + count);
+---
+
+<section id="testimonial" class="site-container scroll-mt-10 py-8 md:py-12">
+  <div
+    class={
+      `
+      pt-8 md:pt-12
+      grid gap-20
+      grid-cols-1
+      sm:grid-cols-${displayedTestimonials.length === 2 ? "2" : "2"}
+      lg:grid-cols-${displayedTestimonials.length === 2 ? "2" : "3"}
+      mx-auto
+      ` +
+      (displayedTestimonials.length === 2
+        ? " w-auto justify-items-center"
+        : " w-full")
+    }
+  >
+    {displayedTestimonials.map((t, i) => (
+      <TestimonialCard
+        testimonial={t}
+        imagePosition={i % 2 !== 0 ? "top" : "bottom"}
+      />
+    ))}
+  </div>
+</section>
