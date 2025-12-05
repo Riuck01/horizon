@@ -2,6 +2,8 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import TestimonialsReverted from "@components/Testimonials/TestimonialsReverted.astro";
 import siteData from "@config/siteData.json";
+import maVideo from "../assets/videos/decoVideo1.mp4";
+import maVideo2 from "../assets/videos/decoVideo2.mp4";
 
   // toutes les images dans public/images
 const images = Object.keys(
@@ -22,15 +24,13 @@ const images = Object.keys(
 
   <!-- Section vidéos -->
   <section class="site-container py-20">
-
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="overflow-hidden rounded-lg shadow-md">
-        <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls class="w-full h-full object-cover rounded-lg" />
+        <video src={maVideo} controls class="w-full h-full object-cover rounded-lg"></video>
       </div>
       <div class="overflow-hidden rounded-lg shadow-md">
-        <video src="https://www.w3schools.com/html/movie.mp4" controls class="w-full h-full object-cover rounded-lg" />
+        <video src={maVideo2} controls class="w-full h-full object-cover rounded-lg"></video>
       </div>
-    </div>
   </section>
 
   <!-- Section images -->
