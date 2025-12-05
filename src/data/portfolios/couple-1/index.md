@@ -1,7 +1,7 @@
 ﻿---
 title: La déco
 description: Transformer votre salle de réception en magnifique salle de mariage. La déco lumière permet de créer de véritables ambiances et c’est encore plus vrai dans des lieux de réception sans cachet.
-heroImage: ./couple-9-square.jpg
+heroImage: ./deco.jpg
 date: "Aug 5 2024"
 location: Malibu, California
 clients: [Hannah, Marco]
