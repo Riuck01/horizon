@@ -3,7 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 
 // toutes les images dans public/images
 const images = Object.keys(
-  import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", { eager: true })
+  import.meta.glob("../../assets/gallery/*.{jpg,jpeg,png,webp}", { eager: true })
 );
 ---
 
