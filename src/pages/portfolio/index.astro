@@ -1,14 +1,14 @@
 ﻿---
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-// toutes les images dans assets/gallery
-const images = Object.values(
-  import.meta.glob("../../assets/gallery/*.{jpg,jpeg,png,webp}", { eager: true })
-).map((mod: any) => mod.default); // on prend la vraie URL
+// Récupère toutes les images dans src/assets/gallery
+const imageModules = import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", { eager: true });
+
+// Transforme les modules en URLs
+const images = Object.values(imageModules).map((mod: any) => mod.default);
 ---
 
 <BaseLayout title="Galerie images" description="Toutes les images de mon dossier">
-  <!-- Section images -->
   <section class="site-container pt-24 md:pt-36">
     <div class="mx-auto max-w-6xl text-center mb-12">
       <h1 class="text-5xl font-bold">Galerie images</h1>
