@@ -1,1 +1,4 @@
-Sitemap: https://horizon.cosmicthemes.com/sitemap-index.xml
+User-agent: *
+Disallow:
+
+Sitemap: https://tomdj.vercel.app/sitemap.xml
