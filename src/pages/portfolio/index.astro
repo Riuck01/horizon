@@ -3,7 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 
 // Récupère toutes les images du dossier src/assets/gallery
 const images = Object.values(
-  import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", { eager: true, as: "url" })
+  import.meta.glob("../../assets/gallery/*.{jpg,jpeg,png,webp}", { eager: true, as: "url" })
 );
 ---
 
