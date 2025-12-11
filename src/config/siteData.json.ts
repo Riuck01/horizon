@@ -13,24 +13,19 @@ export interface SiteDataProps {
 	};
 }
 
-// Update this file with your site specific information
 const siteData: SiteDataProps = {
-	name: "Forest Events",
-	// Your website's title and description (meta fields)
-	title: "Forest Events",
+	name: "Tom DJ",
+	title: "Tom DJ – DJ professionnel pour mariages et événements",
 	description:
-		"Forest Events vous accompagne pour vos événements avec DJ, sonorisation, lumière et animations sur-mesure. Ambiance maîtrisée, musique adaptée et prestations professionnelles pour mariages, cérémonies et soirées privées.",
+		"Tom DJ vous accompagne pour vos événements avec des prestations DJ professionnelles : sonorisation, lumière, animations et ambiance sur-mesure pour mariages, cérémonies et soirées privées.",
 	useViewTransitions: true,
-	// Your information!
 	author: {
 		name: "Tom Forest",
 		email: "tom.forest@outlook.fr"
 	},
-
-	// default image for meta tags if the page doesn't have an image already
 	defaultImage: {
 		src: "/images/cosmic-themes-logo.jpg",
-		alt: "Cosmic Themes logo",
+		alt: "Tom DJ – DJ professionnel",
 	},
 };
 
