@@ -5,9 +5,8 @@ import siteData from "@config/siteData.json";
 import maVideo from "../assets/videos/decoVideo1.mp4";
 import maVideo2 from "../assets/videos/decoVideo2.mp4";
 
-  // toutes les images dans public/images
 const images = Object.keys(
-  import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", { eager: true })
+  import.meta.glob("../../assets/gallery/*.{jpg,jpeg,png,webp}", { eager: true })
 );
 ---
 
