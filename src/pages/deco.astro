@@ -5,17 +5,17 @@ import siteData from "@config/siteData.json";
 import maVideo from "../assets/videos/decoVideo1.mp4";
 import maVideo2 from "../assets/videos/decoVideo2.mp4";
 
-// Récupère les vraies URLs des images
-const images = Object.values(
-  import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", { eager: true })
-).map((mod: any) => mod.default);
+// Import glob avec eager: true
+const imagesModules = import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", { eager: true });
+
+// Transforme en tableau d'URLs
+const images = Object.values(imagesModules).map((mod: any) => mod.default);
 ---
 
 <BaseLayout title="Décoration" description={siteData.description}>
   <!-- Première section de témoignages -->
   <section class="py-20 bg-base-50">
     <div class="container mx-auto">
-      <!-- Affiche les témoignages 4 à 6 -->
       <TestimonialsReverted start={3} count={3} />
     </div>
   </section>
@@ -40,7 +40,7 @@ const images = Object.values(
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {images.map((src) => (
+      {images.map((src: string) => (
         <div class="overflow-hidden rounded-lg">
           <img src={src} alt="Image" class="w-full h-full object-cover" />
         </div>
