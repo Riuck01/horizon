@@ -1,4 +1,4 @@
-export interface SiteDataProps {
+ï»¿export interface SiteDataProps {
 	name: string;
 	title: string;
 	description: string;
@@ -15,9 +15,9 @@ export interface SiteDataProps {
 
 const siteData: SiteDataProps = {
 	name: "Tom DJ",
-	title: "Tom DJ – DJ professionnel pour mariages et événements",
+	title: "Tom DJ â€“ DJ professionnel pour mariages et Ã©vÃ©nements",
 	description:
-		"Tom DJ vous accompagne pour vos événements avec des prestations DJ professionnelles : sonorisation, lumière, animations et ambiance sur-mesure pour mariages, cérémonies et soirées privées.",
+		"Tom DJ vous accompagne pour vos Ã©vÃ©nements avec des prestations DJ professionnelles : sonorisation, lumiÃ¨re, animations et ambiance sur-mesure pour mariages, cÃ©rÃ©monies et soirÃ©es privÃ©es.",
 	useViewTransitions: true,
 	author: {
 		name: "Tom Forest",
@@ -25,7 +25,7 @@ const siteData: SiteDataProps = {
 	},
 	defaultImage: {
 		src: "/images/cosmic-themes-logo.jpg",
-		alt: "Tom DJ – DJ professionnel",
+		alt: "Tom DJ â€“ DJ professionnel",
 	},
 };
 
