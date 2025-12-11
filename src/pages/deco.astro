@@ -2,14 +2,16 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import TestimonialsReverted from "@components/Testimonials/TestimonialsReverted.astro";
 import siteData from "@config/siteData.json";
-import maVideo from "../assets/videos/decoVideo1.mp4";
-import maVideo2 from "../assets/videos/decoVideo2.mp4";
 
-// Import glob avec eager: true
-const imagesModules = import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", { eager: true });
+// Import glob pour toutes les vidéos
+const videos = Object.values(
+  import.meta.glob("../assets/videos/*.{mp4,webm}", { eager: true, as: "url" })
+);
 
-// Transforme en tableau d'URLs
-const images = Object.values(imagesModules).map((mod: any) => mod.default);
+// Import glob pour toutes les images
+const images = Object.values(
+  import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", { eager: true, as: "url" })
+);
 ---
 
 <BaseLayout title="Décoration" description={siteData.description}>
@@ -23,12 +25,11 @@ const images = Object.values(imagesModules).map((mod: any) => mod.default);
   <!-- Section vidéos -->
   <section class="site-container py-20">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="overflow-hidden rounded-lg shadow-md">
-        <video src={maVideo} controls class="w-full h-full object-cover rounded-lg"></video>
-      </div>
-      <div class="overflow-hidden rounded-lg shadow-md">
-        <video src={maVideo2} controls class="w-full h-full object-cover rounded-lg"></video>
-      </div>
+      {videos.map((videoSrc) => (
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <video src={videoSrc} controls class="w-full h-full object-cover rounded-lg"></video>
+        </div>
+      ))}
     </div>
   </section>
 
@@ -40,7 +41,7 @@ const images = Object.values(imagesModules).map((mod: any) => mod.default);
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {images.map((src: string) => (
+      {images.map((src) => (
         <div class="overflow-hidden rounded-lg">
           <img src={src} alt="Image" class="w-full h-full object-cover" />
         </div>
