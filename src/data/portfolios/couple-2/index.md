@@ -4,7 +4,7 @@ description: Le choix du DJ est essentiel pour la réussite d’un évènement. 
 heroImage: ./experience.jpg
 date: "Apr 15 2024"
 location: France
-clients: [Tom, Toma]
+clients: [Tom, Tom]
 images:
   [
     [./experience.jpg, ./experience.jpg],
