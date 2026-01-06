@@ -5,7 +5,7 @@ heroImage: ./deco.jpg
 heroImage: ./deco.jpg
 date: "Apr 15 2024"
 location: France
-clients: [Tom, Tom]
+clients: [Tom, Tomb]
 images:
   [
     [./deco.jpg, ./deco.jpg],
