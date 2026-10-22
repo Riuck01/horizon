@@ -24,7 +24,7 @@ const siteData: SiteDataProps = {
 		email: "tom.forest@outlook.fr"
 	},
 	defaultImage: {
-		src: "/images/cosmic-themes-logo.jpg",
+		src: "/images/site-logo.png",
 		alt: "Tom DJ – DJ professionnel",
 	},
 };
