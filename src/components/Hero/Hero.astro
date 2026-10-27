@@ -36,22 +36,23 @@ import { Image } from "astro:assets";
 
     <!-- hero items -->
     <div class="site-container relative w-full gap-10 py-44 text-center md:py-52 md:text-left">
-        <!-- Hero logo + text avec un fond subtil pour la lisibilité sur PC -->
-        <div class="text-base-50 my-auto mr-auto max-w-[900px] flex flex-col items-center md:items-start p-6 md:p-8 rounded-3xl md:bg-black/30 md:backdrop-blur-sm">
-            <!-- Logo extra-large -->
-            <div class="mb-6">
+        <!-- Hero content -->
+        <div class="text-base-50 my-auto mr-auto max-w-[900px] flex flex-col items-center md:items-start p-6 md:p-0 rounded-3xl md:bg-transparent">
+            
+            <!-- Logo uniquement visible sur mobile (masqué sur PC avec md:hidden) -->
+            <div class="mb-6 md:hidden">
                 <Image
                     src={logo}
                     alt="Forest Events"
                     loading="eager"
-                    width={700}
-                    class="h-56 sm:h-64 md:h-80 w-auto object-contain drop-shadow-[0_6px_10px_rgba(0,0,0,0.8)]"
+                    width={500}
+                    class="h-44 sm:h-56 w-auto object-contain drop-shadow-[0_6px_10px_rgba(0,0,0,0.8)]"
                 />
             </div>
 
-            <!-- DJ Tom Forest en dessous -->
+            <!-- DJ Tom Forest -->
             <h1
-                class="font-heading-1 text-4xl sm:text-5xl md:text-6xl font-semibold text-pretty drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] leading-tight mb-8"
+                class="font-heading-1 text-4xl sm:text-5xl md:text-7xl font-semibold text-pretty drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] leading-tight mb-8"
             >
                 DJ Tom Forest
             </h1>
