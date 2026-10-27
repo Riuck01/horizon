@@ -1,4 +1,4 @@
-import logoNav from "@assets/site-logo.png"; // Ajuste le chemin selon l'emplacement de ton logo
+import logoNav from "@assets/images/site-logo.png"; // Ajuste le chemin selon l'emplacement de ton logo
 
 export interface navLinkItem {
     text: string;
