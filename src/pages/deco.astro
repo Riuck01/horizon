@@ -5,47 +5,57 @@ import siteData from "@config/siteData.json";
 
 // Import glob pour toutes les vidéos
 const videos = Object.values(
-  import.meta.glob("../assets/videos/*.{mp4,webm}", { eager: true, as: "url" })
+    import.meta.glob("../assets/videos/*.{mp4,webm}", { eager: true, as: "url" })
 );
 
 // Import glob pour toutes les images
 const images = Object.values(
-  import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", { eager: true, as: "url" })
+    import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", { eager: true, as: "url" })
 );
 ---
 
 <BaseLayout title="Décoration" description={siteData.description}>
-  <!-- Première section de témoignages -->
-  <section class="py-20 bg-base-50">
-    <div class="container mx-auto">
-      <TestimonialsReverted start={3} count={3} />
-    </div>
-  </section>
-
-  <!-- Section vidéos -->
-  <section class="site-container py-20">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {videos.map((videoSrc) => (
-        <div class="overflow-hidden rounded-lg shadow-md">
-          <video src={videoSrc} controls class="w-full h-full object-cover rounded-lg"></video>
+    <!-- Première section de témoignages -->
+    <section class="py-20 bg-base-50">
+        <div class="container mx-auto">
+            <TestimonialsReverted start={3} count={3} />
         </div>
-      ))}
-    </div>
-  </section>
+    </section>
 
-  <!-- Section images -->
-  <section class="site-container pt-24 md:pt-36">
-    <div class="mx-auto max-w-6xl text-center mb-12">
-      <h1 class="text-5xl font-bold">Galerie images</h1>
-      <p class="text-lg text-gray-600 mt-4">Toutes les images en un seul endroit.</p>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {images.map((src) => (
-        <div class="overflow-hidden rounded-lg">
-          <img src={src} alt="Image" class="w-full h-full object-cover" />
+    <!-- Section vidéos -->
+    <section class="site-container py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {videos.map((videoSrc) => (
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <video src={videoSrc} controls preload="metadata" class="w-full h-full object-cover rounded-lg"></video>
+                </div>
+            ))}
         </div>
-      ))}
-    </div>
-  </section>
+    </section>
+
+    <!-- Section images -->
+    <section class="site-container pt-24 md:pt-36">
+        <div class="mx-auto max-w-6xl text-center mb-12">
+            <h1 class="text-5xl font-bold">Galerie images</h1>
+            <p class="text-lg text-gray-600 mt-4">Toutes les images en un seul endroit.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {images.map((src) => (
+                <div class="overflow-hidden rounded-lg">
+                    <img src={src} alt="Image" class="w-full h-full object-cover" />
+                </div>
+            ))}
+        </div>
+    </section>
 </BaseLayout>
+
+<script>
+    // Force le rechargement des vidéos lors des transitions de page Astro
+    document.addEventListener("astro:page-load", () => {
+        const videoElements = document.querySelectorAll("video");
+        videoElements.forEach((video) => {
+            video.load();
+        });
+    });
+</script>
