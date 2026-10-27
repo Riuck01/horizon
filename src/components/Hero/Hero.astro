@@ -7,7 +7,7 @@
 import Button from "@components/Button/Button.astro";
 import heroImage from "@images/hero-bg-min.jpg";
 import heroImageMobile from "@images/hero-bg-min.jpg";
-import logo from "@images/site-logo.png"; // Import de ton logo
+import logo from "@images/site-logo.png";
 import { Image } from "astro:assets";
 ---
 
@@ -36,17 +36,25 @@ import { Image } from "astro:assets";
 
     <!-- hero items -->
     <div class="site-container relative w-full gap-10 py-44 text-center md:py-52 md:text-left">
-        <!-- Hero text / Logo -->
-        <div class="text-base-50 my-auto mr-auto max-w-[800px] flex-col">
-            <div class="mb-6">
+        <!-- Hero logo + text -->
+        <div class="text-base-50 my-auto mr-auto max-w-[900px] flex-col">
+            <div class="flex flex-col md:flex-row items-center md:items-center gap-6 mb-6">
+                <!-- Logo géant (environ 3 fois plus grand) -->
                 <Image
                     src={logo}
-                    alt="Forest Events - DJ Tom Forest"
+                    alt="Forest Events"
                     loading="eager"
-                    width={400}
-                    class="h-28 md:h-40 w-auto object-contain drop-shadow-[0_4px_6px_rgba(0,0,0,0.5)] mx-auto md:mx-0"
+                    width={500}
+                    class="h-36 sm:h-48 md:h-64 w-auto object-contain drop-shadow-[0_6px_10px_rgba(0,0,0,0.6)]"
                 />
+                <!-- Texte à côté -->
+                <h1
+                    class="font-heading-1 text-4xl sm:text-5xl md:text-6xl font-semibold text-pretty drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] leading-tight"
+                >
+                    DJ Tom Forest
+                </h1>
             </div>
+
             <p
                 class="mt-8 text-lg tracking-widest text-pretty drop-shadow-[0_1px_1px_rgba(0,0,0,0.2)] md:max-w-[550px] md:text-2xl"
             >
