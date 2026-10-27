@@ -1,18 +1,46 @@
 ﻿---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import PricingThreeCards from "@components/Pricing/PricingThreeCards.astro";
+import TestimonialsReverted from "@components/Testimonials/TestimonialsReverted.astro";
 import siteData from "@config/siteData.json";
 ---
 
-<BaseLayout title="Tarifs" description={siteData.description}>
-  <section id="tarifs" class="py-20 text-center">
-    <div class="container mx-auto">
-      <h1 class="text-5xl font-bold mb-6">Tarifs</h1>
+<BaseLayout title="Événements & Prestations – DJ Tom Forest" description={siteData.description}>
+  <section id="materiel" class="py-20">
+    <div class="container mx-auto text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-3">AUTRES ÉVÉNEMENTS</h1>
       <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        Découvrez mes formules adaptées à vos besoins. Que vous soyez particulier ou professionnel, nous avons une offre qui vous correspond.
+        Anniversaires, séminaires, bals, concours agricoles, speaker... Profitez d’une animation professionnelle et sur-mesure adaptée à chaque événement.
       </p>
     </div>
   </section>
+    
+  <!-- Première section de témoignages -->
+  <section class="py-20 bg-base-50">
+    <div class="container mx-auto">
+      <TestimonialsReverted start={11} count={2} />
+    </div>
+  </section>
 
-  <PricingThreeCards />
+  <!-- Deuxième section de témoignages -->
+  <section class="py-20">
+    <div class="container mx-auto">
+      <TestimonialsReverted start={13} count={2} />
+    </div>
+  </section>
+        
+  <!-- Section supplémentaire -->
+  <section class="py-20 bg-base-50">
+    <div class="container mx-auto text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Une animation sur-mesure</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Chaque événement est unique. Contactez-moi pour discuter de votre projet et obtenir une prestation personnalisée.
+      </p>
+    </div>
+
+    <div class="container mx-auto">
+      <TestimonialsReverted start={15} count={2} />
+    </div>
+  </section>
+
 </BaseLayout>
